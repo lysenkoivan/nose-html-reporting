@@ -298,7 +298,7 @@ class HtmlReport(Plugin):
         })
 
     def _format_output(self, o):
-        if isinstance(o, str):
+        if isinstance(o, bytes):
             return o.decode('latin-1')
         else:
             return o
