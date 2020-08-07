@@ -204,7 +204,7 @@ class HtmlReport(Plugin):
             )
             self.stats = {'errors': 0, 'failures': 0, 'passes': 0, 'skipped': 0}
             self.report_data = defaultdict(Group)
-            htmlfile_dirname = os.path.dirname(options.html_file)
+            htmlfile_dirname = os.path.dirname(options.html_file) or '.'
             if not os.path.exists(htmlfile_dirname):
                 os.makedirs(htmlfile_dirname)
             self.report_file = codecs.open(options.html_file, 'w', self.encoding, 'replace')
